@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify/common/widgets/buttons/main_button.dart';
 import 'package:spotify/common/widgets/buttons/mode_selection_button.dart';
 import 'package:spotify/core/config/assets/app_images.dart';
 import 'package:spotify/core/config/assets/app_vectors.dart';
+import 'package:spotify/presentation/auth/pages/auth_select.dart';
+import 'package:spotify/presentation/mode/bloc/theme_cubit.dart';
 
 class ModeSelection extends StatelessWidget {
   const ModeSelection({super.key});
@@ -51,12 +54,20 @@ class ModeSelection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ModeSelectionButton(
-                        onTap: () {},
+                        onTap: () {
+                          context
+                              .read<ThemeCubit>()
+                              .updateTheme(ThemeMode.light);
+                        },
                         icon: AppVectors.lightIcon,
                         modeName: 'Light Mode',
                       ),
                       ModeSelectionButton(
-                        onTap: () {},
+                        onTap: () {
+                          context
+                              .read<ThemeCubit>()
+                              .updateTheme(ThemeMode.dark);
+                        },
                         modeName: 'Dark Mode',
                         icon: AppVectors.dartIcon,
                       )
@@ -68,7 +79,7 @@ class ModeSelection extends StatelessWidget {
                   MainAppButton(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const ModeSelection()));
+                          builder: (context) => const AuthSelect()));
                     },
                     title: 'Continue',
                   ),
