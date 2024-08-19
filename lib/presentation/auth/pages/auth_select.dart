@@ -58,16 +58,14 @@ class AuthSelect extends StatelessWidget {
                     MainAppButton(
                         onTap: () {
                           Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const Signup()),
+                            MaterialPageRoute(builder: (context) => Signup()),
                           );
                         },
                         title: 'Register'),
                     TextButton(
                         onPressed: () {
                           Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const Signin()),
+                            MaterialPageRoute(builder: (context) => Signin()),
                           );
                         },
                         child: Text(

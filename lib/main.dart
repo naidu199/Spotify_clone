@@ -8,6 +8,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:spotify/core/config/theme/app_theme.dart';
 import 'package:spotify/firebase_options.dart';
 import 'package:spotify/presentation/mode/bloc/theme_cubit.dart';
+import 'package:spotify/service_locator.dart';
 
 import 'presentation/splash/pages/splash.dart';
 
@@ -20,7 +21,7 @@ Future<void> main() async {
   );
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  // await initializeDependencies();
+  await initializeDependencies();
 
   runApp(const MyApp());
 }

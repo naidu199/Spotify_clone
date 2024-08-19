@@ -6,12 +6,14 @@ class InputTextField extends StatelessWidget {
   final String hintText;
   final String? label;
   final IconData? prefixIcon;
+  final bool? obscureText;
 
   const InputTextField(
       {super.key,
       this.controller,
       required this.hintText,
       this.label,
+      this.obscureText,
       this.prefixIcon});
 
   @override
@@ -20,6 +22,7 @@ class InputTextField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: TextFormField(
         controller: controller,
+        obscureText: obscureText ?? false,
         decoration: InputDecoration(
           prefixIcon: Icon(prefixIcon),
           hintText: hintText,
@@ -27,6 +30,9 @@ class InputTextField extends StatelessWidget {
             fontWeight: FontWeight.w600,
             fontSize: 16,
           ),
+          // suffixIcon:
+          //     obscureText ?? false ? const Icon(
+          //       Icons.remove_red_eye) : null,
           filled: true,
           fillColor: Colors.transparent,
           border: OutlineInputBorder(
