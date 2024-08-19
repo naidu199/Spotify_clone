@@ -8,7 +8,6 @@ import 'package:spotify/core/config/assets/app_vectors.dart';
 import 'package:spotify/core/config/theme/app_colors.dart';
 import 'package:spotify/data/models/auth/check_user.dart';
 import 'package:spotify/domain/usecases/auth/signin.dart';
-import 'package:spotify/domain/usecases/auth/signup.dart';
 import 'package:spotify/presentation/auth/pages/signup.dart';
 import 'package:spotify/presentation/home/pages/root_page.dart';
 import 'package:spotify/service_locator.dart';
