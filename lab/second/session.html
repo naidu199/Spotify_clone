@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <form action="session.jsp">
+      <input type="text" name="uname" />
+      <input type="submit" value="go" />
+    </form>
+  </body>
+</html>
+session.jsp
+<html>
+  <body>
+    <% String name=request.getParameter("uname"); out.print("Welcome "+name);
+    session.setAttribute("user",name); %>
+    <br />
+    <a href="second.jsp">Next Page</a>
+  </body>
+</html>
